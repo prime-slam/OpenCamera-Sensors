@@ -25,16 +25,9 @@ android {
 
     signingConfigs {
         release
-        debug
         if (System.getenv("CI")) {
             release {
-                storeFile rootProject.file("my-release-key.keystore")
-                storePassword System.getenv("keystore_password")
-                keyAlias System.getenv("keystore_alias")
-                keyPassword System.getenv("keystore_alias_password")
-            }
-            debug {
-                storeFile rootProject.file("my-release-key.keystore")
+                storeFile rootProject.file("release.jks")
                 storePassword System.getenv("keystore_password")
                 keyAlias System.getenv("keystore_alias")
                 keyPassword System.getenv("keystore_alias_password")
@@ -47,10 +40,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.release
-        }
-        debug {
-            minifyEnabled false
-            signingConfig signingConfigs.debug
         }
     }
 
