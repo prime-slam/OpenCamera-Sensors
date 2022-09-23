@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * <p>
- * Modifications copyright (C) 2021 Mobile Robotics Lab. at Skoltech.
+ * Modifications copyright (C) 2021 Azat Akhmetyanov, Anastasiia Kornilova, Timofey Pushkin,
+ * Alina Shlegel.
  */
 
 package com.googleresearch.capturesync;
