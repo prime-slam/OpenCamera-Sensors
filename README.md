@@ -1,5 +1,8 @@
 ![OpenCamera Sensors logo](https://imgur.com/7qjCtgp.png)
 
+**Note**: this is the main repository of OpenCamera Sensors. The old repository is now archived and
+will not receive any updates.
+
 OpenCamera Sensors is an Android application for synchronized recording of video and IMU data on one
 or multiple smartphones. It records sensor data (accelerometer, gyroscope, magnetometer) and video
 with frame timestamps synced to the same clock.
