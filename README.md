@@ -22,9 +22,18 @@ height="80">](https://f-droid.org/packages/com.opencamera_sensors.app/)
 
 ## Usage
 
+Our app requires full Camera2 API support. Additional restrictions are described in the sections
+below as needed.
+
+### IMU recording
+
+**Important**: synchronized timestamping for camera and IMU data isn’t available on all the
+devices with Camera2 API support. You can check whether your device supports this feature in
+preferences.
+
 ![screenshot settings](https://imgur.com/Md2O0sO.png)
 
-- Go to preferences, enable Camera2API and press the **“Enable sync video IMU recording”** switch
+- Go to preferences, enable Camera2 API and press the **“Enable sync video IMU recording”** switch
   in "IMU settings..."
 - (Optional) **Disable video stabilization** in video preferences of OpenCamera Sensors to minimize
   preprocessing effects
@@ -95,27 +104,19 @@ _Note: the phase needs to be re-aligned before every recording._
 - To minimize the amount of preprocessing done by the smartphone, we also disable **video
   stabilization** and **OIS** options.
 
-## Restrictions
-
-One important restriction is that our app requires full Camera2API support.
-
-Another restriction of our application is that synchronized timestamping for camera and IMU data
-isn’t available on all the devices with Camera2API support. You can check whether your device
-supports this feature in preferences.
-
 ## Contribution
 
 The project follows [AOSP Java Code Style](https://source.android.com/setup/contribute/code-style),
-main principles:
+main principles, which include the following:
 
 - Non-public fields should start with ```m```, constants are ```ALL_CAPS_UNDERSCORES```
 - Standard brace style:
 
 ```java
 if () {
-    //...
-} else{
-    //...
+    // ...
+} else {
+    // ...
 }
 ```
 
