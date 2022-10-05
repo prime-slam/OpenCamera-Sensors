@@ -1,5 +1,8 @@
 ![OpenCamera Sensors logo](https://imgur.com/7qjCtgp.png)
 
+**Note**: this is the main repository of OpenCamera Sensors. The old repository is now archived and
+will not receive any updates.
+
 OpenCamera Sensors is an Android application for synchronized recording of video and IMU data on one
 or multiple smartphones. It records sensor data (accelerometer, gyroscope, magnetometer) and video
 with frame timestamps synced to the same clock.
@@ -8,6 +11,15 @@ This project is based on [Open Camera](https://opencamera.org.uk/) — a popular
 application with flexibility in camera parameters settings, actively supported by the community. By
 regular merging of Open Camera updates our app will adapt to new smartphones and APIs — this is an
 advantage over the other video + IMU recording applications built from scratch for Camera2API.
+
+## Related papers
+
+If you use OpenCamera Sensors for your research consider citing these papers:
+
+- A. Akhmetyanov, A. Kornilova, M. Faizullin, D. Pozo and G. Ferrer, ["Sub-millisecond Video Synchronization of Multiple
+  Android Smartphones,"](https://doi.org/10.1109/SENSORS47087.2021.9639782) 2021 IEEE Sensors, 2021, pp. 1-4
+- Faizullin, M.; Kornilova, A.; Akhmetyanov, A.; Ferrer, G. [Twist-n-Sync: Software Clock Synchronization with
+  Microseconds Accuracy Using MEMS-Gyroscopes](https://doi.org/10.3390/s21010068). Sensors 2021, 21, 68
 
 ## Install
 
@@ -19,9 +31,18 @@ height="80">](https://f-droid.org/packages/com.opencamera_sensors.app/)
 
 ## Usage
 
+Our app requires full Camera2 API support. Additional restrictions are described in the sections
+below as needed.
+
+### IMU recording
+
+**Important**: synchronized timestamping for camera and IMU data isn’t available on all the
+devices with Camera2 API support. You can check whether your device supports this feature in
+preferences.
+
 ![screenshot settings](https://imgur.com/Md2O0sO.png)
 
-- Go to preferences, enable Camera2API and press the **“Enable sync video IMU recording”** switch
+- Go to preferences, enable Camera2 API and press the **“Enable sync video IMU recording”** switch
   in "IMU settings..."
 - (Optional) **Disable video stabilization** in video preferences of OpenCamera Sensors to minimize
   preprocessing effects
@@ -92,27 +113,19 @@ _Note: the phase needs to be re-aligned before every recording._
 - To minimize the amount of preprocessing done by the smartphone, we also disable **video
   stabilization** and **OIS** options.
 
-## Restrictions
-
-One important restriction is that our app requires full Camera2API support.
-
-Another restriction of our application is that synchronized timestamping for camera and IMU data
-isn’t available on all the devices with Camera2API support. You can check whether your device
-supports this feature in preferences.
-
 ## Contribution
 
 The project follows [AOSP Java Code Style](https://source.android.com/setup/contribute/code-style),
-main principles:
+main principles, which include the following:
 
 - Non-public fields should start with ```m```, constants are ```ALL_CAPS_UNDERSCORES```
 - Standard brace style:
 
 ```java
 if () {
-    //...
-} else{
-    //...
+    // ...
+} else {
+    // ...
 }
 ```
 
